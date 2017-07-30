@@ -46,7 +46,7 @@ class Trivia {
         self._answerOne = answerOne
         self._answerTwo = answerTwo
         self._answerThree = answerThree
-        self._answerThree = answerFour
+        self._answerFour = answerFour
         self._correctAnswer = correctAnswer
     }
 }
