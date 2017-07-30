@@ -16,7 +16,10 @@ class ViewController: UIViewController {
     var questionsAsked = 0
     var correctQuestions = 0
     var indexOfSelectedQuestion: Int = 0
-    var gameSound: SystemSoundID = 0
+    var gameStartSound: SystemSoundID = 0
+    var applausSound: SystemSoundID = 0
+    var booSound: SystemSoundID = 0
+    var buzzerSound: SystemSoundID = 0
     var usedQuestions = [Trivia]()
     var previousNumber = GKRandomSource.sharedRandom().nextInt(upperBound: trivia.count)
 
@@ -32,6 +35,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         loadGameStartSound()
+        loadApplausSound()
+        loadBooSound()
+        loadBuzzerSound()
         // Start game
         playGameStartSound()
         displayQuestion()
@@ -99,6 +105,7 @@ class ViewController: UIViewController {
         if questionsAsked == questionsPerRound {
             // Game is over
             displayScore()
+            playBuzzerSound()
         } else {
             // Continue game
             displayQuestion()
@@ -117,8 +124,6 @@ class ViewController: UIViewController {
         nextRound()
     }
     
-
-    
     // MARK: Helper Methods
     
     func loadNextRoundWithDelay(seconds: Int) {
@@ -136,12 +141,39 @@ class ViewController: UIViewController {
     func loadGameStartSound() {
         let pathToSoundFile = Bundle.main.path(forResource: "GameSound", ofType: "wav")
         let soundURL = URL(fileURLWithPath: pathToSoundFile!)
-        AudioServicesCreateSystemSoundID(soundURL as CFURL, &gameSound)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &gameStartSound)
+    }
+    func loadApplausSound() {
+        let pathToSoundFile = Bundle.main.path(forResource: "applause_y", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &applausSound)
     }
     
-    func playGameStartSound() {
-        AudioServicesPlaySystemSound(gameSound)
+    func loadBooSound() {
+        let pathToSoundFile = Bundle.main.path(forResource: "boo", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &booSound)
     }
+    func loadBuzzerSound() {
+        let pathToSoundFile = Bundle.main.path(forResource: "buzzer_x", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &buzzerSound)
+    }
+    
+    
+    func playGameStartSound() {
+        AudioServicesPlaySystemSound(gameStartSound)
+    }
+    func playApplausSound() {
+        AudioServicesPlaySystemSound(applausSound)
+    }
+    func playBooSound() {
+        AudioServicesPlaySystemSound(booSound)
+    }
+    func playBuzzerSound() {
+        AudioServicesPlaySystemSound(buzzerSound)
+    }
+    
     
     func btnPressedCheck (button: String) {
         // Increment the questions asked counter
@@ -150,8 +182,10 @@ class ViewController: UIViewController {
         if correctAnswer == button {
             correctQuestions += 1
             questionField.text = "Correct!"
+            playApplausSound()
         }else {
             questionField.text = "Sorry, wrong answer!"
+            playBooSound()
         }
     }
 }
