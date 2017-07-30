@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		141628E11F2AC28100EC4B62 /* Trivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141628E01F2AC28100EC4B62 /* Trivia.swift */; };
 		141628E51F2ACEB200EC4B62 /* DataQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141628E41F2ACEB200EC4B62 /* DataQuestions.swift */; };
+		141628E91F2E5A0900EC4B62 /* buzzer_x.wav in Resources */ = {isa = PBXBuildFile; fileRef = 141628E61F2E5A0800EC4B62 /* buzzer_x.wav */; };
+		141628EA1F2E5A0900EC4B62 /* boo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 141628E71F2E5A0800EC4B62 /* boo.wav */; };
+		141628EB1F2E5A0900EC4B62 /* applause_y.wav in Resources */ = {isa = PBXBuildFile; fileRef = 141628E81F2E5A0900EC4B62 /* applause_y.wav */; };
 		97093D3C1C913506001275BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3B1C913506001275BC /* AppDelegate.swift */; };
 		97093D3E1C913506001275BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3D1C913506001275BC /* ViewController.swift */; };
 		97093D411C913506001275BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97093D3F1C913506001275BC /* Main.storyboard */; };
@@ -20,6 +23,9 @@
 /* Begin PBXFileReference section */
 		141628E01F2AC28100EC4B62 /* Trivia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trivia.swift; sourceTree = "<group>"; };
 		141628E41F2ACEB200EC4B62 /* DataQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataQuestions.swift; sourceTree = "<group>"; };
+		141628E61F2E5A0800EC4B62 /* buzzer_x.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buzzer_x.wav; sourceTree = "<group>"; };
+		141628E71F2E5A0800EC4B62 /* boo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boo.wav; sourceTree = "<group>"; };
+		141628E81F2E5A0900EC4B62 /* applause_y.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = applause_y.wav; sourceTree = "<group>"; };
 		97093D381C913506001275BC /* TrueFalseStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueFalseStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97093D3B1C913506001275BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97093D3D1C913506001275BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +64,17 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		141628EC1F2E5A1900EC4B62 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				97093D521C932116001275BC /* GameSound.wav */,
+				141628E61F2E5A0800EC4B62 /* buzzer_x.wav */,
+				141628E71F2E5A0800EC4B62 /* boo.wav */,
+				141628E81F2E5A0900EC4B62 /* applause_y.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		97093D2F1C913506001275BC = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +94,7 @@
 		97093D3A1C913506001275BC /* TrueFalseStarter */ = {
 			isa = PBXGroup;
 			children = (
+				141628EC1F2E5A1900EC4B62 /* Sounds */,
 				141628E31F2AC2A500EC4B62 /* Controller */,
 				141628E21F2AC29100EC4B62 /* Model */,
 				97093D3B1C913506001275BC /* AppDelegate.swift */,
@@ -84,7 +102,6 @@
 				97093D421C913506001275BC /* Assets.xcassets */,
 				97093D441C913506001275BC /* LaunchScreen.storyboard */,
 				97093D471C913506001275BC /* Info.plist */,
-				97093D521C932116001275BC /* GameSound.wav */,
 			);
 			path = TrueFalseStarter;
 			sourceTree = "<group>";
@@ -148,10 +165,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				141628E91F2E5A0900EC4B62 /* buzzer_x.wav in Resources */,
 				97093D531C932116001275BC /* GameSound.wav in Resources */,
 				97093D461C913506001275BC /* LaunchScreen.storyboard in Resources */,
+				141628EA1F2E5A0900EC4B62 /* boo.wav in Resources */,
 				97093D431C913506001275BC /* Assets.xcassets in Resources */,
 				97093D411C913506001275BC /* Main.storyboard in Resources */,
+				141628EB1F2E5A0900EC4B62 /* applause_y.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
