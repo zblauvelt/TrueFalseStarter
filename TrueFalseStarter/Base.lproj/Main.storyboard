@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="S0h-IY-XaO">
-                                <rect key="frame" x="57" y="124.33333333333331" width="300" height="300"/>
+                                <rect key="frame" x="57" y="124.33333333333331" width="300" height="354.33333333333337"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raL-X6-0o4">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="32.000000000000014"/>
@@ -74,6 +74,12 @@
                                             <action selector="playAgain" destination="BYZ-38-t0r" eventType="touchUpInside" id="klz-B2-JAN"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yD5-dZ-dny">
+                                        <rect key="frame" x="0.0" y="335" width="300" height="19.333333333333371"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Sdu-mH-1fB"/>
@@ -105,6 +111,7 @@
                         <outlet property="answerOne" destination="raL-X6-0o4" id="Sm7-so-r80"/>
                         <outlet property="answerThree" destination="Ihs-SE-ttb" id="PyP-E3-Zfr"/>
                         <outlet property="answerTwo" destination="pA7-CI-aFn" id="cbd-eb-EYW"/>
+                        <outlet property="correctAnswerLbl" destination="yD5-dZ-dny" id="Zpx-KB-hRH"/>
                         <outlet property="playAgainButton" destination="K17-uy-MvB" id="0Bx-Cm-ye0"/>
                         <outlet property="questionField" destination="I3V-ih-1Ky" id="7UI-o2-ATi"/>
                     </connections>
