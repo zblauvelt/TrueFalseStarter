@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var answerThree: UIButton!
     @IBOutlet weak var answerFour: UIButton!
     @IBOutlet weak var playAgainButton: UIButton!
+    @IBOutlet weak var correctAnswerLbl: UILabel!
     
 
     override func viewDidLoad() {
@@ -45,7 +46,7 @@ class ViewController: UIViewController {
     }
     
     func displayQuestion() {
-        
+        correctAnswerLbl.isHidden = true
         func randomNumber() -> Int {
         indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextInt(upperBound: trivia.count)
             while usedIndex.contains(indexOfSelectedQuestion){
@@ -186,6 +187,21 @@ class ViewController: UIViewController {
         }else {
             questionField.text = "Sorry, wrong answer!"
             playBooSound()
+            correctAnswerLbl.isHidden = false
+            let answer = trivia[indexOfSelectedQuestion].correctAnswer
+            
+            switch answer {
+            case correctOne:
+                correctAnswerLbl.text = "The correct answer is \(trivia[indexOfSelectedQuestion].answerOne)"
+            case correctTwo:
+                correctAnswerLbl.text = "The correct answer is \(trivia[indexOfSelectedQuestion].answerTwo)"
+            case correctThree:
+                correctAnswerLbl.text = "The correct answer is \(trivia[indexOfSelectedQuestion].answerThree)"
+            case correctFour:
+                correctAnswerLbl.text = "The correct answer is \(trivia[indexOfSelectedQuestion].answerFour)"
+            default:
+                correctAnswerLbl.text = "I have no clue what the answer is!!"
+            }
         }
     }
 }
