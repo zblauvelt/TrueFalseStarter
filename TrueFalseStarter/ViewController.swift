@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     var buzzerSound: SystemSoundID = 0
     var usedQuestions = [Trivia]()
     var previousNumber = GKRandomSource.sharedRandom().nextInt(upperBound: trivia.count)
+    var usedIndex = [Int]()
 
     @IBOutlet weak var questionField: UILabel!
     @IBOutlet weak var answerOne: UIButton!
@@ -47,14 +48,12 @@ class ViewController: UIViewController {
         
         func randomNumber() -> Int {
         indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextInt(upperBound: trivia.count)
-            print("ZACK: Orginal random number is \(indexOfSelectedQuestion)")
-            while previousNumber == indexOfSelectedQuestion {
+            while usedIndex.contains(indexOfSelectedQuestion){
                 indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextInt(upperBound: trivia.count)
-                print("ZACK: New random number in while loop is \(indexOfSelectedQuestion)")
             }
             previousNumber = indexOfSelectedQuestion
-            print("ZACK: Previous number is \(previousNumber)")
-            print("ZACK: The final index number is \(indexOfSelectedQuestion)")
+            usedIndex.append(previousNumber)
+
             return indexOfSelectedQuestion
         }
         indexOfSelectedQuestion = randomNumber()
@@ -106,6 +105,7 @@ class ViewController: UIViewController {
             // Game is over
             displayScore()
             playBuzzerSound()
+            usedIndex.removeAll()
         } else {
             // Continue game
             displayQuestion()
