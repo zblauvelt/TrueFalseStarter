@@ -74,6 +74,7 @@ class ViewController: UIViewController {
         answerTwo.isHidden = true
         answerThree.isHidden = true
         answerFour.isHidden = true
+        correctAnswerLbl.isHidden = true
         
         // Display play again button
         playAgainButton.isHidden = false
